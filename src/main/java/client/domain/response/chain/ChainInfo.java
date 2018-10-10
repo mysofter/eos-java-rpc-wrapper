@@ -31,10 +31,6 @@ public class ChainInfo {
 
     private String blockNetLimit;
 
-    public ChainInfo() {
-
-    }
-
     public String getServerVersion() {
         return serverVersion;
     }
@@ -146,5 +142,23 @@ public class ChainInfo {
     @JsonProperty("block_net_limit")
     public void setBlockNetLimit(String blockNetLimit) {
         this.blockNetLimit = blockNetLimit;
+    }
+
+    @Override
+    public String toString() {
+        return "ChainInfo{" +
+                "serverVersion:\"" + serverVersion + '\"' +
+                ", chainId:\"" + chainId + '\"' +
+                ", headBlockNum:\"" + headBlockNum + '\"' +
+                ", lastIrreversibleBlockNum:\"" + lastIrreversibleBlockNum + '\"' +
+                ", lastIrreversibleBlockId:\"" + lastIrreversibleBlockId + '\"' +
+                ", headBlockId:\"" + headBlockId + '\"' +
+                ", headBlockTime:\"" + headBlockTime + '\"' +
+                ", headBlockProducer:\"" + headBlockProducer + '\"' +
+                ", virtualBlockCpuLimit:\"" + virtualBlockCpuLimit + '\"' +
+                ", virtualBlockNetLimit:\"" + virtualBlockNetLimit + '\"' +
+                ", blockCpuLimit:\"" + blockCpuLimit + '\"' +
+                ", blockNetLimit:\"" + blockNetLimit + '\"' +
+                '}';
     }
 }
