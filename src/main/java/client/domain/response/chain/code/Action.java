@@ -6,15 +6,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Action {
 
+    @JsonProperty("ricardian_contract")
     private String ricardianContract;
 
     private String name;
 
     private String type;
-
-    public Action() {
-
-    }
 
     public String getName() {
         return name;
@@ -32,12 +29,20 @@ public class Action {
         this.type = type;
     }
 
-    @JsonProperty("ricardian_contract")
     public String getRicardianContract() {
         return ricardianContract;
     }
 
     public void setRicardianContract(String ricardianContract) {
         this.ricardianContract = ricardianContract;
+    }
+
+    @Override
+    public String toString() {
+        return "Action{" +
+                "ricardianContract='" + ricardianContract + '\'' +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
 }

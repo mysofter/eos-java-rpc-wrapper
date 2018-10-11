@@ -6,15 +6,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class StructField {
 
+    @JsonProperty("ricardian_contract")
     private String ricardianContract;
 
     private String name;
 
     private String type;
-
-    public StructField() {
-
-    }
 
     public String getName() {
         return name;
@@ -32,12 +29,20 @@ public class StructField {
         this.type = type;
     }
 
-    @JsonProperty("ricardian_contract")
     public String getRicardianContract() {
         return ricardianContract;
     }
 
     public void setRicardianContract(String ricardianContract) {
         this.ricardianContract = ricardianContract;
+    }
+
+    @Override
+    public String toString() {
+        return "StructField{" +
+                "ricardianContract='" + ricardianContract + '\'' +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
 }

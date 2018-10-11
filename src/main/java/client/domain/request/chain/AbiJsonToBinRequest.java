@@ -42,4 +42,13 @@ public class AbiJsonToBinRequest<T> {
     public void setArgs(T args) {
         this.args = args;
     }
+
+    @Override
+    public String toString() {
+        return "AbiJsonToBinRequest{" +
+                "code='" + code + '\'' +
+                ", action='" + action + '\'' +
+                ", args=" + args +
+                '}';
+    }
 }

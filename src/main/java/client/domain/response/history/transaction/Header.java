@@ -9,29 +9,37 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Header {
 
+    @JsonProperty("timestamp")
     private Integer timestamp;
 
+    @JsonProperty("producer")
     private String producer;
 
+    @JsonProperty("confirmed")
     private Integer confirmed;
 
+    @JsonProperty("previous")
     private String previous;
 
+    @JsonProperty("transaction_mroot")
     private String transactionMroot;
 
+    @JsonProperty("action_mroot")
     private String actionMroot;
 
+    @JsonProperty("schedule_version")
     private Integer scheduleVersion;
 
+    @JsonProperty("new_producers")
     private Object newProducers;
 
+    @JsonProperty("header_extensions")
     private List<Object> headerExtensions = null;
 
     public Integer getTimestamp() {
         return timestamp;
     }
 
-    @JsonProperty("timestamp")
     public void setTimestamp(Integer timestamp) {
         this.timestamp = timestamp;
     }
@@ -40,7 +48,6 @@ public class Header {
         return producer;
     }
 
-    @JsonProperty("producer")
     public void setProducer(String producer) {
         this.producer = producer;
     }
@@ -49,7 +56,6 @@ public class Header {
         return confirmed;
     }
 
-    @JsonProperty("confirmed")
     public void setConfirmed(Integer confirmed) {
         this.confirmed = confirmed;
     }
@@ -58,7 +64,6 @@ public class Header {
         return previous;
     }
 
-    @JsonProperty("previous")
     public void setPrevious(String previous) {
         this.previous = previous;
     }
@@ -67,7 +72,6 @@ public class Header {
         return transactionMroot;
     }
 
-    @JsonProperty("transaction_mroot")
     public void setTransactionMroot(String transactionMroot) {
         this.transactionMroot = transactionMroot;
     }
@@ -76,7 +80,6 @@ public class Header {
         return actionMroot;
     }
 
-    @JsonProperty("action_mroot")
     public void setActionMroot(String actionMroot) {
         this.actionMroot = actionMroot;
     }
@@ -85,7 +88,6 @@ public class Header {
         return scheduleVersion;
     }
 
-    @JsonProperty("schedule_version")
     public void setScheduleVersion(Integer scheduleVersion) {
         this.scheduleVersion = scheduleVersion;
     }
@@ -94,7 +96,6 @@ public class Header {
         return newProducers;
     }
 
-    @JsonProperty("new_producers")
     public void setNewProducers(Object newProducers) {
         this.newProducers = newProducers;
     }
@@ -103,9 +104,22 @@ public class Header {
         return headerExtensions;
     }
 
-    @JsonProperty("header_extensions")
     public void setHeaderExtensions(List<Object> headerExtensions) {
         this.headerExtensions = headerExtensions;
     }
 
+    @Override
+    public String toString() {
+        return "Header{" +
+                "timestamp=" + timestamp +
+                ", producer='" + producer + '\'' +
+                ", confirmed=" + confirmed +
+                ", previous='" + previous + '\'' +
+                ", transactionMroot='" + transactionMroot + '\'' +
+                ", actionMroot='" + actionMroot + '\'' +
+                ", scheduleVersion=" + scheduleVersion +
+                ", newProducers=" + newProducers +
+                ", headerExtensions=" + headerExtensions +
+                '}';
+    }
 }

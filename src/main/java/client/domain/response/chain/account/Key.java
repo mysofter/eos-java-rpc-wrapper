@@ -9,10 +9,6 @@ public class Key {
 
     private Long weight;
 
-    public Key() {
-
-    }
-
     public String getKey() {
         return key;
     }
@@ -27,5 +23,13 @@ public class Key {
 
     public void setWeight(Long weight) {
         this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        return "Key{" +
+                "key='" + key + '\'' +
+                ", weight=" + weight +
+                '}';
     }
 }

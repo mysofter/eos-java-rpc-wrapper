@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Wait {
 
+    @JsonProperty("weight_sec")
     private Integer waitSec;
 
     private Integer weight;
@@ -14,7 +15,6 @@ public class Wait {
         return waitSec;
     }
 
-    @JsonProperty("weight_sec")
     public void setWaitSec(Integer waitSec) {
         this.waitSec = waitSec;
     }
@@ -25,5 +25,13 @@ public class Wait {
 
     public void setWeight(Integer weight) {
         this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        return "Wait{" +
+                "waitSec=" + waitSec +
+                ", weight=" + weight +
+                '}';
     }
 }

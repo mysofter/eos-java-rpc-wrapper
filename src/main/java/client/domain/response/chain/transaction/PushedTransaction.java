@@ -8,6 +8,7 @@ public class PushedTransaction {
 
     private Processed processed;
 
+    @JsonProperty("transaction_id")
     private String transactionId;
 
     public Processed getProcessed() {
@@ -18,13 +19,19 @@ public class PushedTransaction {
         this.processed = processed;
     }
 
-
     public String getTransactionId() {
         return transactionId;
     }
 
-    @JsonProperty("transaction_id")
     public void setTransactionId(String transactionId) {
         this.transactionId = transactionId;
+    }
+
+    @Override
+    public String toString() {
+        return "PushedTransaction{" +
+                "processed=" + processed +
+                ", transactionId='" + transactionId + '\'' +
+                '}';
     }
 }

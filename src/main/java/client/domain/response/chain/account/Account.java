@@ -9,23 +9,24 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Account {
 
+    @JsonProperty("account_name")
     private String accountName;
 
+    @JsonProperty("eos_balance")
     private String eosBalance;
 
+    @JsonProperty("staked_balance")
     private String stakedBalance;
 
+    @JsonProperty("unstaking_balance")
     private String unstakingBalance;
 
+    @JsonProperty("last_unstaking_time")
     private String lastUnstakingTime;
 
+    @JsonProperty("permissions")
     private List<Permission> permissions;
 
-    public Account() {
-
-    }
-
-    @JsonProperty("account_name")
     public String getAccountName() {
         return accountName;
     }
@@ -34,7 +35,6 @@ public class Account {
         this.accountName = accountName;
     }
 
-    @JsonProperty("eos_balance")
     public String getEosBalance() {
         return eosBalance;
     }
@@ -43,7 +43,6 @@ public class Account {
         this.eosBalance = eosBalance;
     }
 
-    @JsonProperty("staked_balance")
     public String getStakedBalance() {
         return stakedBalance;
     }
@@ -52,7 +51,6 @@ public class Account {
         this.stakedBalance = stakedBalance;
     }
 
-    @JsonProperty("unstaking_balance")
     public String getUnstakingBalance() {
         return unstakingBalance;
     }
@@ -61,7 +59,6 @@ public class Account {
         this.unstakingBalance = unstakingBalance;
     }
 
-    @JsonProperty("last_unstaking_time")
     public String getLastUnstakingTime() {
         return lastUnstakingTime;
     }
@@ -76,5 +73,17 @@ public class Account {
 
     public void setPermissions(List<Permission> permissions) {
         this.permissions = permissions;
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "accountName='" + accountName + '\'' +
+                ", eosBalance='" + eosBalance + '\'' +
+                ", stakedBalance='" + stakedBalance + '\'' +
+                ", unstakingBalance='" + unstakingBalance + '\'' +
+                ", lastUnstakingTime='" + lastUnstakingTime + '\'' +
+                ", permissions=" + permissions +
+                '}';
     }
 }

@@ -10,21 +10,25 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Act {
 
+    @JsonProperty("account")
     private String account;
 
+    @JsonProperty("authorization")
     private List<Authorization> authorization = null;
 
+    @JsonProperty("data")
     private Object data;
 
+    @JsonProperty("hex_data")
     private String hexData;
 
+    @JsonProperty("name")
     private String name;
 
     public String getAccount() {
         return account;
     }
 
-    @JsonProperty("account")
     public void setAccount(String account) {
         this.account = account;
     }
@@ -33,7 +37,6 @@ public class Act {
         return authorization;
     }
 
-    @JsonProperty("authorization")
     public void setAuthorization(List<Authorization> authorization) {
         this.authorization = authorization;
     }
@@ -42,7 +45,6 @@ public class Act {
         return data;
     }
 
-    @JsonProperty("data")
     public void setData(Object data) {
         this.data = data;
     }
@@ -51,7 +53,6 @@ public class Act {
         return hexData;
     }
 
-    @JsonProperty("hex_data")
     public void setHexData(String hexData) {
         this.hexData = hexData;
     }
@@ -60,9 +61,18 @@ public class Act {
         return name;
     }
 
-    @JsonProperty("name")
     public void setName(String name) {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "Act{" +
+                "account='" + account + '\'' +
+                ", authorization=" + authorization +
+                ", data=" + data +
+                ", hexData='" + hexData + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

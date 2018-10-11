@@ -11,6 +11,7 @@ public class RequiredKeysRequest {
 
     private PackedTransaction transaction;
 
+    @JsonProperty("available_keys")
     private List<String> availableKeys;
 
     public RequiredKeysRequest(PackedTransaction transaction, List<String> availableKeys) {
@@ -26,7 +27,6 @@ public class RequiredKeysRequest {
         this.transaction = transaction;
     }
 
-    @JsonProperty("available_keys")
     public List<String> getAvailableKeys() {
         return availableKeys;
     }

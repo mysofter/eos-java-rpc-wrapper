@@ -24,4 +24,12 @@ public class TransactionAuthorization {
     public void setPermission(String permission) {
         this.permission = permission;
     }
+
+    @Override
+    public String toString() {
+        return "TransactionAuthorization{" +
+                "actor='" + actor + '\'' +
+                ", permission='" + permission + '\'' +
+                '}';
+    }
 }

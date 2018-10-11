@@ -8,63 +8,83 @@ import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Processed {
+
+    @JsonProperty("kcpu_usage")
     private String kcpuUsage;
 
+    @JsonProperty("action_traces")
     private List<ActionTrace> actionTraces;
 
+    @JsonProperty("deferred_transaction_requests")
     private List<String> deferredTransactionRequests;
 
+    @JsonProperty("cpu_usage")
     private String cpuUsage;
 
+    @JsonProperty("status")
     private String status;
 
+    @JsonProperty("write_locks")
     private List<Lock> writeLocks;
 
+    @JsonProperty("region_id")
     private String regionId;
 
+    @JsonProperty("net_usage_words")
     private String netUsageWords;
 
+    @JsonProperty("shared_index")
     private String sharedIndex;
 
+    @JsonProperty("id")
     private String id;
 
+    @JsonProperty("cycle_index")
     private String cycleIndex;
 
+    @JsonProperty("_setup_profiling_us")
     private String setupProfilingUs;
 
+    @JsonProperty("_profiling_us")
     private String profilingUs;
 
+    @JsonProperty("net_usage")
     private String netUsage;
 
+    @JsonProperty("packed_trx_digest")
     private String packedTrxDigest;
 
+    @JsonProperty("readLocks")
     private List<Lock> readLocks;
 
     public String getKcpuUsage() {
         return kcpuUsage;
     }
 
-    @JsonProperty("kcpu_usage")
     public void setKcpuUsage(String kcpuUsage) {
         this.kcpuUsage = kcpuUsage;
     }
-
 
     public List<ActionTrace> getActionTraces() {
         return actionTraces;
     }
 
-    @JsonProperty("action_traces")
     public void setActionTraces(List<ActionTrace> actionTraces) {
         this.actionTraces = actionTraces;
     }
 
+    public List<String> getDeferredTransactionRequests() {
+        return deferredTransactionRequests;
+    }
+
+    public void setDeferredTransactionRequests(List<String> deferredTransactionRequests) {
+        this.deferredTransactionRequests = deferredTransactionRequests;
+    }
 
     public String getCpuUsage() {
         return cpuUsage;
     }
 
-    @JsonProperty("cpu_usage")
     public void setCpuUsage(String cpuUsage) {
         this.cpuUsage = cpuUsage;
     }
@@ -81,7 +101,6 @@ public class Processed {
         return writeLocks;
     }
 
-    @JsonProperty("write_locks")
     public void setWriteLocks(List<Lock> writeLocks) {
         this.writeLocks = writeLocks;
     }
@@ -90,17 +109,14 @@ public class Processed {
         return regionId;
     }
 
-    @JsonProperty("region_id")
     public void setRegionId(String regionId) {
         this.regionId = regionId;
     }
-
 
     public String getNetUsageWords() {
         return netUsageWords;
     }
 
-    @JsonProperty("net_usage_words")
     public void setNetUsageWords(String netUsageWords) {
         this.netUsageWords = netUsageWords;
     }
@@ -109,7 +125,6 @@ public class Processed {
         return sharedIndex;
     }
 
-    @JsonProperty("shared_index")
     public void setSharedIndex(String sharedIndex) {
         this.sharedIndex = sharedIndex;
     }
@@ -126,17 +141,14 @@ public class Processed {
         return cycleIndex;
     }
 
-    @JsonProperty("cycle_index")
     public void setCycleIndex(String cycleIndex) {
         this.cycleIndex = cycleIndex;
     }
-
 
     public String getSetupProfilingUs() {
         return setupProfilingUs;
     }
 
-    @JsonProperty("_setup_profiling_us")
     public void setSetupProfilingUs(String setupProfilingUs) {
         this.setupProfilingUs = setupProfilingUs;
     }
@@ -145,7 +157,6 @@ public class Processed {
         return profilingUs;
     }
 
-    @JsonProperty("_profiling_us")
     public void setProfilingUs(String profilingUs) {
         this.profilingUs = profilingUs;
     }
@@ -154,17 +165,14 @@ public class Processed {
         return netUsage;
     }
 
-    @JsonProperty("net_usage")
     public void setNetUsage(String netUsage) {
         this.netUsage = netUsage;
     }
-
 
     public String getPackedTrxDigest() {
         return packedTrxDigest;
     }
 
-    @JsonProperty("packed_trx_digest")
     public void setPackedTrxDigest(String packedTrxDigest) {
         this.packedTrxDigest = packedTrxDigest;
     }
@@ -177,12 +185,26 @@ public class Processed {
         this.readLocks = readLocks;
     }
 
-    public List<String> getDeferredTransactionRequests() {
-        return deferredTransactionRequests;
+    @Override
+    public String toString() {
+        return "Processed{" +
+                "kcpuUsage='" + kcpuUsage + '\'' +
+                ", actionTraces=" + actionTraces +
+                ", deferredTransactionRequests=" + deferredTransactionRequests +
+                ", cpuUsage='" + cpuUsage + '\'' +
+                ", status='" + status + '\'' +
+                ", writeLocks=" + writeLocks +
+                ", regionId='" + regionId + '\'' +
+                ", netUsageWords='" + netUsageWords + '\'' +
+                ", sharedIndex='" + sharedIndex + '\'' +
+                ", id='" + id + '\'' +
+                ", cycleIndex='" + cycleIndex + '\'' +
+                ", setupProfilingUs='" + setupProfilingUs + '\'' +
+                ", profilingUs='" + profilingUs + '\'' +
+                ", netUsage='" + netUsage + '\'' +
+                ", packedTrxDigest='" + packedTrxDigest + '\'' +
+                ", readLocks=" + readLocks +
+                '}';
     }
 
-    @JsonProperty("deferred_transaction_requests")
-    public void setDeferredTransactionRequests(List<String> deferredTransactionRequests) {
-        this.deferredTransactionRequests = deferredTransactionRequests;
-    }
 }

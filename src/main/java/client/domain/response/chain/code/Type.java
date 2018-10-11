@@ -6,15 +6,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Type {
 
+    @JsonProperty("new_type_name")
     private String newTypeName;
 
     private String type;
 
-    public Type() {
-
-    }
-
-    @JsonProperty("new_type_name")
     public String getNewTypeName() {
         return newTypeName;
     }
@@ -29,5 +25,13 @@ public class Type {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "Type{" +
+                "newTypeName='" + newTypeName + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
 }

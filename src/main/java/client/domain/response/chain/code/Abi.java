@@ -25,10 +25,6 @@ public class Abi {
     // TODO: this might be of some particular type, but I couldn't find any examples of how this would look like
     private Object abiExtensions;
 
-    public Abi() {
-
-    }
-
     public List<Type> getTypes() {
         return types;
     }

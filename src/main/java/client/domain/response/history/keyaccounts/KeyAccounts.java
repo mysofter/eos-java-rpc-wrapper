@@ -8,15 +8,21 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class KeyAccounts {
 
+    @JsonProperty("account_names")
     private List<String> accountNames;
 
     public List<String> getAccountNames() {
         return accountNames;
     }
 
-    @JsonProperty("account_names")
     public void setAccountNames(List<String> accountNames) {
         this.accountNames = accountNames;
     }
 
+    @Override
+    public String toString() {
+        return "KeyAccounts{" +
+                "accountNames=" + accountNames +
+                '}';
+    }
 }

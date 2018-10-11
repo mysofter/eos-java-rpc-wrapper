@@ -7,6 +7,10 @@ import client.domain.common.transaction.TransactionAuthorization;
 import client.domain.response.chain.AbiJsonToBin;
 import client.domain.response.chain.Block;
 import client.domain.response.chain.transaction.PushedTransaction;
+import client.domain.response.history.action.Actions;
+import client.domain.response.history.controlledaccounts.ControlledAccounts;
+import client.domain.response.history.keyaccounts.KeyAccounts;
+import client.domain.response.history.transaction.Transaction;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -15,46 +19,43 @@ import java.util.Map;
 public class EosTest {
 
     public static void main(String[] args) {
-        EosApiRestClient eosApiRestClient = EosApiClientFactory.newInstance("http://127.0.0.1:8888").newRestClient();
+        EosApiRestClient eosApiRestClient = EosApiClientFactory.newInstance("http://122.228.244.215:8888").newRestClient();
 
-        System.out.println(eosApiRestClient.getChainInfo().toString());
-        /* Create the json array of arguments */
-        Map<String, String> args2 = new HashMap<>(4);
-        args2.put("from", "currency");
-        args2.put("to", "eosio");
-        args2.put("quantity", "44.0000 CUR");
-        args2.put("memo", "My First Transaction");
-        AbiJsonToBin data = eosApiRestClient.abiJsonToBin("currency", "transfer", args2);
+        /**++++++++++++++++++++++++++++++++++CHAIN_API++++++++++++++++++++++++++++++++++++++*/
+//        查看区块链信息
+//        System.out.println(eosApiRestClient.getChainInfo().toString());
 
-        /* Get the head block */
-        Block block = eosApiRestClient.getBlock(eosApiRestClient.getChainInfo().getHeadBlockId());
+//         Get the head block
+//        Block block = eosApiRestClient.getBlock(eosApiRestClient.getChainInfo().getHeadBlockId());
+//        System.out.println(block.toString());
 
-        /* Create Transaction Action Authorization */
-        TransactionAuthorization transactionAuthorization = new TransactionAuthorization();
-        transactionAuthorization.setActor("currency");
-        transactionAuthorization.setPermission("active");
+//        查看账户信息
+//        System.out.println(eosApiRestClient.getAccount("eosio").toString());
 
-        /* Create Transaction Action */
-        TransactionAction transactionAction = new TransactionAction();
-        transactionAction.setAccount("currency");
-        transactionAction.setName("transfer");
-        transactionAction.setData(data.getBinargs());
-        transactionAction.setAuthorization(Collections.singletonList(transactionAuthorization));
+        /**++++++++++++++++++++++++++++++++++CHAIN_API++++++++++++++++++++++++++++++++++++++*/
 
-        /* Create a transaction */
-        PackedTransaction packedTransaction = new PackedTransaction();
-        packedTransaction.setRefBlockPrefix(block.getRefBlockPrefix().toString());
-        packedTransaction.setRefBlockNum(block.getBlockNum().toString());
-        packedTransaction.setExpiration("2018-05-10T18:38:19");
-        packedTransaction.setRegion("0");
-        packedTransaction.setMax_net_usage_words("0");
-        packedTransaction.setActions(Collections.singletonList(transactionAction));
+        /**++++++++++++++++++++++++++++++++++HISTORY_API++++++++++++++++++++++++++++++++++++++*/
 
-        /* Sign the Transaction */
-        SignedPackedTransaction signedPackedTransaction = eosApiRestClient.signTransaction(packedTransaction, Collections.singletonList("EOS7LPJ7YnwYiEHbBLz96fNkt3kf6CDDdesV5EsWoc3u3DJy31V2y"), "chainId");
+//        Actions actions= eosApiRestClient.getActions("eosio",0,10);
+//        System.out.println(actions.getActions().size());
 
-        /* Push the transaction */
-        PushedTransaction pushedTransaction = eosApiRestClient.pushTransaction("none", signedPackedTransaction);
+//        查询交易
+//        Transaction transaction = eosApiRestClient.getTransaction("059ae3a5d5597881d12521536020c797269cfc3cfe4ccb949f752c25af9bbf6a");
+//        System.out.println(transaction.toString());
+
+//        根据公钥查询账户
+//        KeyAccounts keyAccounts = eosApiRestClient.getKeyAccounts("EOS8QhiaUmkKZWycFmyghR7RFkUefcK1G7N8RXxwUW8yM7XrxX6te");
+//        System.out.println(keyAccounts.getAccountNames().size()+":::"+keyAccounts.getAccountNames().get(0));
+
+//        查询控制的账户信息
+//        ControlledAccounts controlledAccounts = eosApiRestClient.getControlledAccounts("eosio");
+//        System.out.println(controlledAccounts.getControlledAccounts().size()+"::::::");
+
+        /**++++++++++++++++++++++++++++++++++HISTORY_API++++++++++++++++++++++++++++++++++++++*/
+
+        /**++++++++++++++++++++++++++++++++++WALLET_API++++++++++++++++++++++++++++++++++++++*/
+
+        /**++++++++++++++++++++++++++++++++++WALLET_API++++++++++++++++++++++++++++++++++++++*/
 
     }
 }

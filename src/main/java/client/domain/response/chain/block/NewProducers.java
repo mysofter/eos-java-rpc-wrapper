@@ -3,6 +3,8 @@ package client.domain.response.chain.block;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Arrays;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class NewProducers {
 	/*
@@ -20,24 +22,34 @@ public class NewProducers {
 	      ......
 	
 	*/
-	
+
+    @JsonProperty("version")
     private int version;
 
+    @JsonProperty("producers")
     private Producer[] producers;
-    
-    public NewProducers()
-    {
-    	
+
+    public int getVersion() {
+        return version;
     }
-    
-    @JsonProperty("version")
+
     public void setVersion(int version) {
         this.version = version;
     }
-    
-    @JsonProperty("producers")
+
+    public Producer[] getProducers() {
+        return producers;
+    }
+
     public void setProducers(Producer[] producers) {
         this.producers = producers;
     }
-    
+
+    @Override
+    public String toString() {
+        return "NewProducers{" +
+                "version=" + version +
+                ", producers=" + Arrays.toString(producers) +
+                '}';
+    }
 }

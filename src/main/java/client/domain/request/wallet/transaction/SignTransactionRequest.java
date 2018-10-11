@@ -46,4 +46,14 @@ public class SignTransactionRequest {
     public void setChainId(String chainId) {
         this.chainId = chainId;
     }
+
+    @Override
+    public String toString() {
+        return "SignTransactionRequest{" +
+                "packedTransaction=" + packedTransaction +
+                ", publicKeys=" + publicKeys +
+                ", chainId='" + chainId + '\'' +
+                '}';
+    }
+
 }

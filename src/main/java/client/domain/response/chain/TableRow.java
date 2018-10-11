@@ -12,10 +12,6 @@ public class TableRow {
 
     private Boolean more;
 
-    public TableRow() {
-
-    }
-
     public List<Map<String, ?>> getRows() {
         return rows;
     }
@@ -30,5 +26,13 @@ public class TableRow {
 
     public void setMore(Boolean more) {
         this.more = more;
+    }
+
+    @Override
+    public String toString() {
+        return "TableRow{" +
+                "rows=" + rows +
+                ", more=" + more +
+                '}';
     }
 }

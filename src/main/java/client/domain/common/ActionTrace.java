@@ -9,41 +9,56 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ActionTrace {
 
+    @JsonProperty("act")
     private Act act;
 
+    @JsonProperty("console")
     private String console;
 
+    @JsonProperty("cpu_usage")
     private Integer cpuUsage;
 
+    @JsonProperty("elapsed")
     private Integer elapsed;
 
+    @JsonProperty("inline_traces")
     private List<Object> inlineTraces = null;
 
+    @JsonProperty("receipt")
     private Receipt receipt;
 
+    @JsonProperty("total_cpu_usage")
     private Integer totalCpuUsage;
 
+    @JsonProperty("trx_id")
     private String trxId;
 
+    @JsonProperty("context_free")
     private boolean contextFree;
 
+    @JsonProperty("block_num")
     private long blockNum;
 
+    @JsonProperty("block_time")
     private String blockTime;
 
+    @JsonProperty("producer_block_id")
     private String producerBlockId;
 
+    @JsonProperty("account_ram_deltas")
     private List<AccountRamDelta> accountRamDeltas;
 
+    @JsonProperty("trx_status")
     private String trxStatus;
 
+    @JsonProperty("createdAt")
     private String createdAt;
+
 
     public Act getAct() {
         return act;
     }
 
-    @JsonProperty("act")
     public void setAct(Act act) {
         this.act = act;
     }
@@ -52,7 +67,6 @@ public class ActionTrace {
         return console;
     }
 
-    @JsonProperty("console")
     public void setConsole(String console) {
         this.console = console;
     }
@@ -61,7 +75,6 @@ public class ActionTrace {
         return cpuUsage;
     }
 
-    @JsonProperty("cpu_usage")
     public void setCpuUsage(Integer cpuUsage) {
         this.cpuUsage = cpuUsage;
     }
@@ -70,7 +83,6 @@ public class ActionTrace {
         return elapsed;
     }
 
-    @JsonProperty("elapsed")
     public void setElapsed(Integer elapsed) {
         this.elapsed = elapsed;
     }
@@ -79,7 +91,6 @@ public class ActionTrace {
         return inlineTraces;
     }
 
-    @JsonProperty("inline_traces")
     public void setInlineTraces(List<Object> inlineTraces) {
         this.inlineTraces = inlineTraces;
     }
@@ -88,7 +99,6 @@ public class ActionTrace {
         return receipt;
     }
 
-    @JsonProperty("receipt")
     public void setReceipt(Receipt receipt) {
         this.receipt = receipt;
     }
@@ -97,7 +107,6 @@ public class ActionTrace {
         return totalCpuUsage;
     }
 
-    @JsonProperty("total_cpu_usage")
     public void setTotalCpuUsage(Integer totalCpuUsage) {
         this.totalCpuUsage = totalCpuUsage;
     }
@@ -106,7 +115,6 @@ public class ActionTrace {
         return trxId;
     }
 
-    @JsonProperty("trx_id")
     public void setTrxId(String trxId) {
         this.trxId = trxId;
     }
@@ -115,7 +123,6 @@ public class ActionTrace {
         return contextFree;
     }
 
-    @JsonProperty("context_free")
     public void setContextFree(boolean contextFree) {
         this.contextFree = contextFree;
     }
@@ -124,7 +131,6 @@ public class ActionTrace {
         return blockNum;
     }
 
-    @JsonProperty("block_num")
     public void setBlockNum(long blockNum) {
         this.blockNum = blockNum;
     }
@@ -132,7 +138,7 @@ public class ActionTrace {
     public String getBlockTime() {
         return blockTime;
     }
-    @JsonProperty("block_time")
+
     public void setBlockTime(String blockTime) {
         this.blockTime = blockTime;
     }
@@ -141,7 +147,6 @@ public class ActionTrace {
         return producerBlockId;
     }
 
-    @JsonProperty("producer_block_id")
     public void setProducerBlockId(String producerBlockId) {
         this.producerBlockId = producerBlockId;
     }
@@ -150,7 +155,6 @@ public class ActionTrace {
         return accountRamDeltas;
     }
 
-    @JsonProperty("account_ram_deltas")
     public void setAccountRamDeltas(List<AccountRamDelta> accountRamDeltas) {
         this.accountRamDeltas = accountRamDeltas;
     }
@@ -158,7 +162,7 @@ public class ActionTrace {
     public String getTrxStatus() {
         return trxStatus;
     }
-    @JsonProperty("trx_status")
+
     public void setTrxStatus(String trxStatus) {
         this.trxStatus = trxStatus;
     }
@@ -166,10 +170,29 @@ public class ActionTrace {
     public String getCreatedAt() {
         return createdAt;
     }
-    @JsonProperty("createdAt")
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 
-
+    @Override
+    public String toString() {
+        return "ActionTrace{" +
+                "act=" + act +
+                ", console='" + console + '\'' +
+                ", cpuUsage=" + cpuUsage +
+                ", elapsed=" + elapsed +
+                ", inlineTraces=" + inlineTraces +
+                ", receipt=" + receipt +
+                ", totalCpuUsage=" + totalCpuUsage +
+                ", trxId='" + trxId + '\'' +
+                ", contextFree=" + contextFree +
+                ", blockNum=" + blockNum +
+                ", blockTime='" + blockTime + '\'' +
+                ", producerBlockId='" + producerBlockId + '\'' +
+                ", accountRamDeltas=" + accountRamDeltas +
+                ", trxStatus='" + trxStatus + '\'' +
+                ", createdAt='" + createdAt + '\'' +
+                '}';
+    }
 }

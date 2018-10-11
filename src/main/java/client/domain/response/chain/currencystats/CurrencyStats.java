@@ -6,17 +6,19 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CurrencyStats {
 
+    @JsonProperty("supply")
     private String supply;
 
+    @JsonProperty("max_supply")
     private String maxSupply;
 
+    @JsonProperty("issuer")
     private String issuer;
 
     public String getSupply() {
         return supply;
     }
 
-    @JsonProperty("supply")
     public void setSupply(String supply) {
         this.supply = supply;
     }
@@ -25,7 +27,6 @@ public class CurrencyStats {
         return maxSupply;
     }
 
-    @JsonProperty("max_supply")
     public void setMaxSupply(String maxSupply) {
         this.maxSupply = maxSupply;
     }
@@ -34,9 +35,16 @@ public class CurrencyStats {
         return issuer;
     }
 
-    @JsonProperty("issuer")
     public void setIssuer(String issuer) {
         this.issuer = issuer;
     }
 
+    @Override
+    public String toString() {
+        return "CurrencyStats{" +
+                "supply='" + supply + '\'' +
+                ", maxSupply='" + maxSupply + '\'' +
+                ", issuer='" + issuer + '\'' +
+                '}';
+    }
 }

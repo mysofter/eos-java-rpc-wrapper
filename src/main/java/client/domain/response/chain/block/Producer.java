@@ -20,24 +20,34 @@ public class Producer {
 	      ......
 	
 	*/
-	
+
+	@JsonProperty("producer_name")
     private String producerName;
 
+    @JsonProperty("block_signing_key")
     private String blockSigningKey;
-    
-    public Producer()
-    {
-    	
+
+    public String getProducerName() {
+        return producerName;
     }
-    
-    @JsonProperty("producer_name")
+
     public void setProducerName(String producerName) {
         this.producerName = producerName;
     }
-    
-    @JsonProperty("block_signing_key")
+
+    public String getBlockSigningKey() {
+        return blockSigningKey;
+    }
+
     public void setBlockSigningKey(String blockSigningKey) {
         this.blockSigningKey = blockSigningKey;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Producer{" +
+                "producerName='" + producerName + '\'' +
+                ", blockSigningKey='" + blockSigningKey + '\'' +
+                '}';
+    }
 }

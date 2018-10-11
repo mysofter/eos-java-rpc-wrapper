@@ -13,10 +13,6 @@ public class Struct {
 
     private List<StructField> fields;
 
-    public Struct() {
-
-    }
-
     public String getName() {
         return name;
     }
@@ -39,5 +35,14 @@ public class Struct {
 
     public void setFields(List<StructField> fields) {
         this.fields = fields;
+    }
+
+    @Override
+    public String toString() {
+        return "Struct{" +
+                "name='" + name + '\'' +
+                ", base='" + base + '\'' +
+                ", fields=" + fields +
+                '}';
     }
 }

@@ -8,13 +8,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ControlledAccounts {
 
+    @JsonProperty("controlled_accounts")
     private List<String> controlledAccounts;
 
     public List<String> getControlledAccounts() {
         return controlledAccounts;
     }
 
-    @JsonProperty("controlled_accounts")
     public void setControlledAccounts(List<String> controlledAccounts) {
         this.controlledAccounts = controlledAccounts;
     }

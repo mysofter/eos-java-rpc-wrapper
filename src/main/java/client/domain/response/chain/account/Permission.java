@@ -6,17 +6,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Permission {
 
+    @JsonProperty("name")
     private String name;
 
+    @JsonProperty("parent")
     private String parent;
 
+    @JsonProperty("perm_name")
     private String permName;
 
+    @JsonProperty("required_auth")
     private RequiredAuth requiredAuth;
-
-    public Permission() {
-
-    }
 
     public String getName() {
         return name;
@@ -34,7 +34,14 @@ public class Permission {
         this.parent = parent;
     }
 
-    @JsonProperty("required_auth")
+    public String getPermName() {
+        return permName;
+    }
+
+    public void setPermName(String permName) {
+        this.permName = permName;
+    }
+
     public RequiredAuth getRequiredAuth() {
         return requiredAuth;
     }
@@ -43,12 +50,13 @@ public class Permission {
         this.requiredAuth = requiredAuth;
     }
 
-    public String getPermName() {
-        return permName;
-    }
-
-    @JsonProperty("perm_name")
-    public void setPermName(String permName) {
-        this.permName = permName;
+    @Override
+    public String toString() {
+        return "Permission{" +
+                "name='" + name + '\'' +
+                ", parent='" + parent + '\'' +
+                ", permName='" + permName + '\'' +
+                ", requiredAuth=" + requiredAuth +
+                '}';
     }
 }

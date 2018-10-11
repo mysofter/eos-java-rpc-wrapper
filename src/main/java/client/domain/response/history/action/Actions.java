@@ -8,8 +8,10 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Actions {
 
+    @JsonProperty("actions")
     private List<Action> actions;
 
+    @JsonProperty("last_irreversible_block")
     private Integer lastIrreversibleBlock;
 
     public List<Action> getActions() {
@@ -24,8 +26,15 @@ public class Actions {
         return lastIrreversibleBlock;
     }
 
-    @JsonProperty("last_irreversible_block")
     public void setLastIrreversibleBlock(Integer lastIrreversibleBlock) {
         this.lastIrreversibleBlock = lastIrreversibleBlock;
+    }
+
+    @Override
+    public String toString() {
+        return "Actions{" +
+                "actions=" + actions +
+                ", lastIrreversibleBlock=" + lastIrreversibleBlock +
+                '}';
     }
 }

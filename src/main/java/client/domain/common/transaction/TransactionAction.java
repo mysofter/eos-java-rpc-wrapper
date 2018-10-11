@@ -16,10 +16,6 @@ public class TransactionAction {
 
     private String data;
 
-    public TransactionAction() {
-
-    }
-
     public String getAccount() {
         return account;
     }
@@ -50,5 +46,15 @@ public class TransactionAction {
 
     public void setData(String data) {
         this.data = data;
+    }
+
+    @Override
+    public String toString() {
+        return "TransactionAction{" +
+                "account='" + account + '\'' +
+                ", name='" + name + '\'' +
+                ", authorization=" + authorization +
+                ", data='" + data + '\'' +
+                '}';
     }
 }

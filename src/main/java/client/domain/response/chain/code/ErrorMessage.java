@@ -6,15 +6,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ErrorMessage {
 
+    @JsonProperty("error_code")
     private Integer errorCode;
 
+    @JsonProperty("error_msg")
     private String errorMsg;
 
     public Integer getErrorCode() {
         return errorCode;
     }
 
-    @JsonProperty("error_code")
     public void setErrorCode(Integer errorCode) {
         this.errorCode = errorCode;
     }
@@ -23,9 +24,15 @@ public class ErrorMessage {
         return errorMsg;
     }
 
-    @JsonProperty("error_msg")
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
 
+    @Override
+    public String toString() {
+        return "ErrorMessage{" +
+                "errorCode=" + errorCode +
+                ", errorMsg='" + errorMsg + '\'' +
+                '}';
+    }
 }

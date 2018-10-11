@@ -6,151 +6,74 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import client.domain.response.chain.block.NewProducers;
 import client.domain.response.history.transaction.Transaction;
 
+import java.util.Arrays;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Block {
 
-    private String previous;
-
+    @JsonProperty("timestamp")
     private String timeStamp;
 
-    private String transactionMerkleRoot;
-
-    private String actionMerkleRoot;
-
-    private String blockMerkleRoot;
-
+    @JsonProperty("producer")
     private String producer;
 
-    private String scheduleVersion;
-
-    private NewProducers newProducers;
-
-    private String producerSignature;
-
-    private String id;
-
-    private Long blockNum;
-
-    private Long refBlockPrefix;
-
+    @JsonProperty("confirmed")
     private Boolean confirmed;
 
-    private Transaction[] transactions;
+    @JsonProperty("previous")
+    private String previous;
 
-    private String[] headerExtensions;
-
-    private String[] blockExtensions;
-
-    public Block() {
-    }
-
-    public String getActionMerkleRoot() {
-        return actionMerkleRoot;
-    }
+    @JsonProperty("transaction_mroot")
+    private String transactionMerkleRoot;
 
     @JsonProperty("action_mroot")
-    public void setActionMerkleRoot(String actionMerkleRoot) {
-        this.actionMerkleRoot = actionMerkleRoot;
-    }
+    private String actionMerkleRoot;
 
-    public String getBlockMerkleRoot() {
-        return blockMerkleRoot;
-    }
+    @JsonProperty("schedule_version")
+    private String scheduleVersion;
+
+    @JsonProperty("new_producers")
+    private NewProducers newProducers;
+
+    @JsonProperty("header_extensions")
+    private String[] headerExtensions;
+
+    @JsonProperty("producer_signature")
+    private String producerSignature;
+
+    @JsonProperty("transactions")
+    private Transaction[] transactions;
+
+    @JsonProperty("block_extensions")
+    private String[] blockExtensions;
+
+    @JsonProperty("id")
+    private String id;
+
+    @JsonProperty("block_num")
+    private Long blockNum;
+
+    @JsonProperty("ref_block_prefix")
+    private Long refBlockPrefix;
 
     @JsonProperty("block_mroot")
-    public void setBlockMerkleRoot(String blockMerkleRoot) {
-        this.blockMerkleRoot = blockMerkleRoot;
-    }
+    private String blockMerkleRoot;
 
-    public String getPrevious() {
-        return previous;
-    }
-
-    @JsonProperty("previous")
-    public void setPrevious(String previous) {
-        this.previous = previous;
-    }
 
     public String getTimeStamp() {
         return timeStamp;
     }
 
-    @JsonProperty("timestamp")
     public void setTimeStamp(String timeStamp) {
         this.timeStamp = timeStamp;
-    }
-
-    public String getTransactionMerkleRoot() {
-        return transactionMerkleRoot;
-    }
-
-    @JsonProperty("transaction_mroot")
-    public void setTransactionMerkleRoot(String transactionMerkleRoot) {
-        this.transactionMerkleRoot = transactionMerkleRoot;
     }
 
     public String getProducer() {
         return producer;
     }
 
-    @JsonProperty("producer")
     public void setProducer(String producer) {
         this.producer = producer;
-    }
-
-
-    public String getProducerSignature() {
-        return producerSignature;
-    }
-
-    @JsonProperty("producer_signature")
-    public void setProducerSignature(String producerSignature) {
-        this.producerSignature = producerSignature;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    @JsonProperty("id")
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public Long getBlockNum() {
-        return blockNum;
-    }
-
-    @JsonProperty("block_num")
-    public void setBlockNum(Long blockNum) {
-        this.blockNum = blockNum;
-    }
-
-    public Long getRefBlockPrefix() {
-        return refBlockPrefix;
-    }
-
-    @JsonProperty("ref_block_prefix")
-    public void setRefBlockPrefix(Long refBlockPrefix) {
-        this.refBlockPrefix = refBlockPrefix;
-    }
-
-    public NewProducers getNewProducers() {
-        return newProducers;
-    }
-
-    @JsonProperty("new_producers")
-    public void setNewProducers(NewProducers newProducers) {
-        this.newProducers = newProducers;
-    }
-
-    public String getScheduleVersion() {
-        return scheduleVersion;
-    }
-
-    @JsonProperty("schedule_version")
-    public void setScheduleVersion(String scheduleVersion) {
-        this.scheduleVersion = scheduleVersion;
     }
 
     public Boolean getConfirmed() {
@@ -161,6 +84,62 @@ public class Block {
         this.confirmed = confirmed;
     }
 
+    public String getPrevious() {
+        return previous;
+    }
+
+    public void setPrevious(String previous) {
+        this.previous = previous;
+    }
+
+    public String getTransactionMerkleRoot() {
+        return transactionMerkleRoot;
+    }
+
+    public void setTransactionMerkleRoot(String transactionMerkleRoot) {
+        this.transactionMerkleRoot = transactionMerkleRoot;
+    }
+
+    public String getActionMerkleRoot() {
+        return actionMerkleRoot;
+    }
+
+    public void setActionMerkleRoot(String actionMerkleRoot) {
+        this.actionMerkleRoot = actionMerkleRoot;
+    }
+
+    public String getScheduleVersion() {
+        return scheduleVersion;
+    }
+
+    public void setScheduleVersion(String scheduleVersion) {
+        this.scheduleVersion = scheduleVersion;
+    }
+
+    public NewProducers getNewProducers() {
+        return newProducers;
+    }
+
+    public void setNewProducers(NewProducers newProducers) {
+        this.newProducers = newProducers;
+    }
+
+    public String[] getHeaderExtensions() {
+        return headerExtensions;
+    }
+
+    public void setHeaderExtensions(String[] headerExtensions) {
+        this.headerExtensions = headerExtensions;
+    }
+
+    public String getProducerSignature() {
+        return producerSignature;
+    }
+
+    public void setProducerSignature(String producerSignature) {
+        this.producerSignature = producerSignature;
+    }
+
     public Transaction[] getTransactions() {
         return transactions;
     }
@@ -169,21 +148,65 @@ public class Block {
         this.transactions = transactions;
     }
 
-    public String[] getHeaderExtensions() {
-        return headerExtensions;
-    }
-
-    @JsonProperty("header_extensions")
-    public void setHeaderExtensions(String[] headerExtensions) {
-        this.headerExtensions = headerExtensions;
-    }
-
     public String[] getBlockExtensions() {
         return blockExtensions;
     }
 
-    @JsonProperty("block_extensions")
     public void setBlockExtensions(String[] blockExtensions) {
         this.blockExtensions = blockExtensions;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Long getBlockNum() {
+        return blockNum;
+    }
+
+    public void setBlockNum(Long blockNum) {
+        this.blockNum = blockNum;
+    }
+
+    public Long getRefBlockPrefix() {
+        return refBlockPrefix;
+    }
+
+    public void setRefBlockPrefix(Long refBlockPrefix) {
+        this.refBlockPrefix = refBlockPrefix;
+    }
+
+    public String getBlockMerkleRoot() {
+        return blockMerkleRoot;
+    }
+
+    public void setBlockMerkleRoot(String blockMerkleRoot) {
+        this.blockMerkleRoot = blockMerkleRoot;
+    }
+
+    @Override
+    public String toString() {
+        return "Block{" +
+                "timeStamp='" + timeStamp + '\'' +
+                ", producer='" + producer + '\'' +
+                ", confirmed=" + confirmed +
+                ", previous='" + previous + '\'' +
+                ", transactionMerkleRoot='" + transactionMerkleRoot + '\'' +
+                ", actionMerkleRoot='" + actionMerkleRoot + '\'' +
+                ", scheduleVersion='" + scheduleVersion + '\'' +
+                ", newProducers=" + newProducers +
+                ", headerExtensions=" + Arrays.toString(headerExtensions) +
+                ", producerSignature='" + producerSignature + '\'' +
+                ", transactions=" + Arrays.toString(transactions) +
+                ", blockExtensions=" + Arrays.toString(blockExtensions) +
+                ", id='" + id + '\'' +
+                ", blockNum=" + blockNum +
+                ", refBlockPrefix=" + refBlockPrefix +
+                ", blockMerkleRoot='" + blockMerkleRoot + '\'' +
+                '}';
     }
 }

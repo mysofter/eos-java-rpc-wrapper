@@ -8,10 +8,13 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AbiJsonToBin {
 
+    @JsonProperty("binargs")
     private String binargs;
 
+    @JsonProperty("required_scope")
     private List<String> requiredScope;
 
+    @JsonProperty("required_auth")
     private List<String> requiredAuth;
 
     public String getBinargs() {
@@ -22,7 +25,6 @@ public class AbiJsonToBin {
         this.binargs = binargs;
     }
 
-    @JsonProperty("required_scope")
     public List<String> getRequiredScope() {
         return requiredScope;
     }
@@ -31,12 +33,20 @@ public class AbiJsonToBin {
         this.requiredScope = requiredScope;
     }
 
-    @JsonProperty("required_auth")
     public List<String> getRequiredAuth() {
         return requiredAuth;
     }
 
     public void setRequiredAuth(List<String> requiredAuth) {
         this.requiredAuth = requiredAuth;
+    }
+
+    @Override
+    public String toString() {
+        return "AbiJsonToBin{" +
+                "binargs='" + binargs + '\'' +
+                ", requiredScope=" + requiredScope +
+                ", requiredAuth=" + requiredAuth +
+                '}';
     }
 }

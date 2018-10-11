@@ -13,10 +13,6 @@ public class Code {
 
     private Abi abi;
 
-    public Code() {
-
-    }
-
     public String getAccount_name() {
         return account_name;
     }
@@ -47,5 +43,15 @@ public class Code {
 
     public void setAbi(Abi abi) {
         this.abi = abi;
+    }
+
+    @Override
+    public String toString() {
+        return "Code{" +
+                "account_name='" + account_name + '\'' +
+                ", code_hash='" + code_hash + '\'' +
+                ", wast='" + wast + '\'' +
+                ", abi=" + abi +
+                '}';
     }
 }

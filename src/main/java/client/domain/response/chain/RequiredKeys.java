@@ -8,18 +8,21 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RequiredKeys {
 
+    @JsonProperty("required_keys")
     private List<String> requiredKeys;
-
-    public RequiredKeys() {
-
-    }
 
     public List<String> getRequiredKeys() {
         return requiredKeys;
     }
 
-    @JsonProperty("required_keys")
     public void setRequiredKeys(List<String> requiredKeys) {
         this.requiredKeys = requiredKeys;
+    }
+
+    @Override
+    public String toString() {
+        return "RequiredKeys{" +
+                "requiredKeys=" + requiredKeys +
+                '}';
     }
 }

@@ -11,13 +11,11 @@ public class AbiBinToJson {
 
     private Object args;
 
+    @JsonProperty("required_scope")
     private List<String> requiredScope;
 
+    @JsonProperty("required_auth")
     private List<String> requiredAuth;
-
-    public AbiBinToJson() {
-
-    }
 
     public Object getArgs() {
         return args;
@@ -27,7 +25,6 @@ public class AbiBinToJson {
         this.args = args;
     }
 
-    @JsonProperty("required_scope")
     public List<String> getRequiredScope() {
         return requiredScope;
     }
@@ -36,7 +33,6 @@ public class AbiBinToJson {
         this.requiredScope = requiredScope;
     }
 
-    @JsonProperty("required_auth")
     public List<String> getRequiredAuth() {
         return requiredAuth;
     }
@@ -45,5 +41,12 @@ public class AbiBinToJson {
         this.requiredAuth = requiredAuth;
     }
 
-
+    @Override
+    public String toString() {
+        return "AbiBinToJson{" +
+                "args=" + args +
+                ", requiredScope=" + requiredScope +
+                ", requiredAuth=" + requiredAuth +
+                '}';
+    }
 }

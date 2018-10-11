@@ -6,13 +6,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AccountRamDelta {
 
+    @JsonProperty("account")
     private String account;
+
+    @JsonProperty("delta")
     private long delta;
 
     public String getAccount() {
         return account;
     }
-    @JsonProperty("account")
+
     public void setAccount(String account) {
         this.account = account;
     }
@@ -20,8 +23,16 @@ public class AccountRamDelta {
     public long getDelta() {
         return delta;
     }
-    @JsonProperty("delta")
+
     public void setDelta(long delta) {
         this.delta = delta;
+    }
+
+    @Override
+    public String toString() {
+        return "AccountRamDelta{" +
+                "account='" + account + '\'' +
+                ", delta=" + delta +
+                '}';
     }
 }

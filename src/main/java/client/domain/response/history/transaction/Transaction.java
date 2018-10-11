@@ -9,29 +9,36 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Transaction {
 
+    @JsonProperty("id")
     private String id;
 
+    @JsonProperty("trx")
     private Object trx;
 
+    @JsonProperty("block_time")
     private String blockTime;
 
+    @JsonProperty("block_num")
     private Integer blockNum;
 
+    @JsonProperty("last_irreversible_block")
     private Integer lastIrreversibleBlock;
 
+    @JsonProperty("traces")
     private List<ActionTrace> traces = null;
 
     private String status;
 
+    @JsonProperty("cpu_usage_us")
     private String cpuUsageUs;
 
+    @JsonProperty("net_usage_words")
     private String netUsageWords;
 
     public String getId() {
         return id;
     }
 
-    @JsonProperty("id")
     public void setId(String id) {
         this.id = id;
     }
@@ -40,7 +47,6 @@ public class Transaction {
         return trx;
     }
 
-    @JsonProperty("trx")
     public void setTrx(Object trx) {
         this.trx = trx;
     }
@@ -49,7 +55,6 @@ public class Transaction {
         return blockTime;
     }
 
-    @JsonProperty("block_time")
     public void setBlockTime(String blockTime) {
         this.blockTime = blockTime;
     }
@@ -58,7 +63,6 @@ public class Transaction {
         return blockNum;
     }
 
-    @JsonProperty("block_num")
     public void setBlockNum(Integer blockNum) {
         this.blockNum = blockNum;
     }
@@ -67,7 +71,6 @@ public class Transaction {
         return lastIrreversibleBlock;
     }
 
-    @JsonProperty("last_irreversible_block")
     public void setLastIrreversibleBlock(Integer lastIrreversibleBlock) {
         this.lastIrreversibleBlock = lastIrreversibleBlock;
     }
@@ -76,7 +79,6 @@ public class Transaction {
         return traces;
     }
 
-    @JsonProperty("traces")
     public void setTraces(List<ActionTrace> traces) {
         this.traces = traces;
     }
@@ -93,7 +95,6 @@ public class Transaction {
         return cpuUsageUs;
     }
 
-    @JsonProperty("cpu_usage_us")
     public void setCpuUsageUs(String cpuUsageUs) {
         this.cpuUsageUs = cpuUsageUs;
     }
@@ -102,8 +103,22 @@ public class Transaction {
         return netUsageWords;
     }
 
-    @JsonProperty("net_usage_words")
     public void setNetUsageWords(String netUsageWords) {
         this.netUsageWords = netUsageWords;
+    }
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "id='" + id + '\'' +
+                ", trx=" + trx +
+                ", blockTime='" + blockTime + '\'' +
+                ", blockNum=" + blockNum +
+                ", lastIrreversibleBlock=" + lastIrreversibleBlock +
+                ", traces=" + traces +
+                ", status='" + status + '\'' +
+                ", cpuUsageUs='" + cpuUsageUs + '\'' +
+                ", netUsageWords='" + netUsageWords + '\'' +
+                '}';
     }
 }

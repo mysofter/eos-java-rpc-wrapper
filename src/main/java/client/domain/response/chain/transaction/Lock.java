@@ -24,4 +24,12 @@ public class Lock {
     public void setAccount(String account) {
         this.account = account;
     }
+
+    @Override
+    public String toString() {
+        return "Lock{" +
+                "scope='" + scope + '\'' +
+                ", account='" + account + '\'' +
+                '}';
+    }
 }

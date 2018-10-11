@@ -7,15 +7,21 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Data {
 
+    @JsonProperty("header")
     private Header header;
 
     public Header getHeader() {
         return header;
     }
 
-    @JsonProperty("header")
     public void setHeader(Header header) {
         this.header = header;
     }
 
+    @Override
+    public String toString() {
+        return "Data{" +
+                "header=" + header +
+                '}';
+    }
 }
