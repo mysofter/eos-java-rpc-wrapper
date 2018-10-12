@@ -19,7 +19,7 @@ import java.util.Map;
 public class EosTest {
 
     public static void main(String[] args) {
-        EosApiRestClient eosApiRestClient = EosApiClientFactory.newInstance("http://122.228.244.215:8888").newRestClient();
+        EosApiRestClient eosApiRestClient = EosApiClientFactory.newInstance("http://127.0.0.1:8888").newRestClient();
 
         /**++++++++++++++++++++++++++++++++++CHAIN_API++++++++++++++++++++++++++++++++++++++*/
 //        查看区块链信息
@@ -54,7 +54,8 @@ public class EosTest {
         /**++++++++++++++++++++++++++++++++++HISTORY_API++++++++++++++++++++++++++++++++++++++*/
 
         /**++++++++++++++++++++++++++++++++++WALLET_API++++++++++++++++++++++++++++++++++++++*/
-
+//        eosApiRestClient.openWallet("default");
+        eosApiRestClient.lockWallet("default");
         /**++++++++++++++++++++++++++++++++++WALLET_API++++++++++++++++++++++++++++++++++++++*/
 
     }
